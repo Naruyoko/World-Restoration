@@ -1,44 +1,56 @@
 //Main JS file
 function getDefaultUser() {
   return {
-    level1: {
-      forksRepelled: 0,
-      fRs: [1],
-      fRCosts: [10],
-      fRMax: 1,
+    level1: {//forks
+      repelled: 0,
+      amount: [1],
+      costs: [10],
+      max: 1,
     },
-    level2: {
-      keys: 0,
-      keyConversion: [2, 1000],
-      keyUps: [0, 0, 0],
+    level2: {//keys
+      amount: 0,
+      conversion: [2, 1000],
+      ups: [0, 0, 0],
+      costs: [10, 100, 1000],
+      increase: [0, 0, 1.2],
     },
-    level3: {
-      cakes: 0,
-      cakeConversion: [2.5, "1e6"],
+    level3: {//cakes
+      amount: 0,
+      conversion: [2.5, "1e6"],
+      ups: [0, 0, 0, 0],
+      costs: [10, 100, 1000, "1e6"],
+      increase: [0, 0, 1.3, 25],
       flakeBreak: false,
-      cakeUps: [0, 0, 0, 0],
     },
-    level4: {
-      karma: 0,
-      karmaConversion: [3, "1e9"],
-      karmaUps: [0, 0, 0, 0],
+    level4: {//karma
+      amount: 0,
+      conversion: [3, "1e9"],
+      ups: [0, 0, 0, 0],
+      costs: [10, 100, 1000, 500],
+      increase: [0, 0, 1.4, 0],
     },
-    level5: {
-      time: 0,
-      timeConversion: [3.5, "1e12"],
-      timeUps: [0, 0, 0],
+    level5: {//time
+      amount: 0,
+      conversion: [3.5, "1e12"],
+      ups: [0, 0, 0],
+      costs: [10, 100, 1000],
+      increase: [0, 1.25, 1.5],
     },
-    level6: {
-      memories: 0,
-      memoryConversion: [4, "1e15"],
-      memoryUps: [0, 0, 0],
+    level6: {//memories
+      amount: 0,
+      onversion: [4, "1e15"],
+      ups: [0, 0, 0],
+      costs: [10, "1e6", 1000],
+      increase: [0, 15, 1.6],
       reminiscing: false,
       remems: 0,
     },
-    level7: {
-      knowledge: 0,
-      knowledgeConversion: [4.2, "1e18"],
-      knowlUps: [0, 0, 0, 0],
+    level7: {//knowledge
+      amount: 0,
+      conversion: [4.2, "1e18"],
+      ups: [0, 0, 0, 0],
+      costs: [10, 100, 1000, 30000],
+      increase: [0, 0, 1.7, 0],
     },
   };
 }
@@ -49,12 +61,13 @@ function produce(time) {
   let len = user.level1.forkRepellents.length;
   let base = 10;
   let total = 0;
-  while(time>1){
+  while(time>=1){
     for(int i=0;i<len;i++){
-      total += user.level1.forkRepellents[i]*Math.pow(1.2,i)*getBoost(i);
+      total += user.level1.amount[i]*Math.pow(1.2,i)*getBoost(i);
     }
+    time--;
   }
-  user.level1.forksRepelled += total;
+  user.level1.repelled += total;
 }
 
 function getBoost(num) {
@@ -79,7 +92,7 @@ function reset(level) {
       let prestigeAmount = user["level"+i][0];
       let conversion = user["level"+level][1];
       let addedPrestige = Math.root(Math.divide(prestigeAmount,conversion[0]), conversion[1]);
-      if(user[1][2][2]>0) addedPrestige*Math.pow(1.05,user[1][2][2]);
+      if(user[i][2][2]>0) addedPrestige*Math.pow(1.05,user[i][2][2]);
       user["level"+level][0] = user["level"+level][0]+addedPrestige;
     }
     user["level"+i] = getDefaultUser["level"+i];
@@ -93,5 +106,10 @@ function update() {
 }
 
 function update(level) {
-  
+  update("level"+level+"amount",user[level].amount);
+}
+
+function start() {
+  update();
+  setInterval(produce(1),1000);
 }
