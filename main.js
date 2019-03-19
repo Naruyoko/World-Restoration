@@ -77,7 +77,7 @@ function reset(level) {
   for(int i=0;i<level;i++){
     if(i==level-1){
       let prestigeAmount = user["level"+i][0];
-      let conversion = user["level"+level"][1];
+      let conversion = user["level"+level][1];
       let addedPrestige = Math.root(Math.divide(prestigeAmount,conversion[0]), conversion[1]);
       if(user[1][2][2]>0) addedPrestige*Math.pow(1.05,user[1][2][2]);
       user["level"+level][0] = user["level"+level][0]+addedPrestige;
