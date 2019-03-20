@@ -1,20 +1,20 @@
 //Main JS file
 function getDefaultUser() {
   return {
-    level1: {//forks
+    level1: {//叉
       repelled: new Decimal(0),
       amount: [new Decimal(1)],
       costs: [new Decimal(10)],
       max: 1,
     },
-    level2: {//keys
+    level2: {//鑰匙
       amount: new Decimal(0),
       conversion: [new Decimal(2), new Decimal(1000)],
       ups: [0, 0, new Decimal(0)],
       costs: [10, 100, new Decimal(1000)],
       increase: [0, 0, new Decimal(1.2)],
     },
-    level3: {//cakes
+    level3: {//蛋糕
       amount: new Decimal(0),
       conversion: [new Decimal(2.5), new Decimal(1e6)],
       ups: [0, 0, 0, 0],
@@ -22,21 +22,21 @@ function getDefaultUser() {
       increase: [0, 0, new Decimal(1.3), new Decimal(25)],
       flakeBreak: false,
     },
-    level4: {//karma
+    level4: {//業
       amount: new Decimal(0),
       conversion: [new Decimal(3), new Decimal(1e9)],
       ups: [0, 0, 0, 0],
       costs: [10, 100, new Decimal(1000), 500],
       increase: [0, 0, new Decimal(1.4), 0],
     },
-    level5: {//time
+    level5: {//時間
       amount: 0,
       conversion: [3.5, new Decimal(1e12)],
       ups: [0, 0, 0],
       costs: [10, new Decimal(100), new Decimal(1000)],
       increase: [0, new Decimal(1.25), new Decimal(1.5)],
     },
-    level6: {//memories
+    level6: {//記憶
       amount: new Decimal(0),
       onversion: [4, new Decimal(1e15)],
       ups: [0, 0, 0],
@@ -45,7 +45,7 @@ function getDefaultUser() {
       reminiscing: false,
       remems: 0,
     },
-    level7: {//knowledge
+    level7: {//知識
       amount: new Decimal(0),
       conversion: [4.2, new Decimal(1e18)],
       ups: [0, 0, 0, 0],
