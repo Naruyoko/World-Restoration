@@ -3,23 +3,23 @@
 	<head>
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript" src="confractus_numerus.js"></script>
-		<title>World Restoration</title>
+		<title>世界復原</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body style="text-align:center" onLoad="start()">
 		<div id="forks" class="tab" style="display:block">
-			<div id="forkAmount"><span id="repelled">0</span> Forks repelled</div>
-			<button onclick="buy(1, 1)">Buy Fork Repellent 1<br/>
-				Cost: <span id="fr1Cost">10</span> Forks repelled
+			<div id="forkAmount">驅逐了<span id="repelled">0</span>叉</div>
+			<button onclick="buy(1, 1)">購買驅叉劑1<br/>
+				成本: 驅逐<span id="fr1Cost">10</span>叉
 				</button>
-			<button onclick="reset(1)" style="display:none">New Episode!</button>
+			<button onclick="reset(1)" style="display:none">新一集！</button>
 		</div>
 		<div id="keys" class="tab" style="display:none">
-			<div><span id="keysAmount">0</span> Keys obtained</div>
-			<button onclick="buy(2, 1)">More Forks are repelled based on Keys</button>
-			<button onclick="buy(2, 2)">Power up Fork Repellents for every 10 bought</button>
-			<button onclick="buy(2, 3)">Get 5% more Keys each New Episode</button>
-			<button onclick="reset(2)" style="display:none">New Cake at Stake!</button>
+			<div>獲得<span id="keysAmount">0</span>鑰匙</div>
+			<button onclick="buy(2, 1)">基於鑰匙，驅逐更多叉</button>
+			<button onclick="buy(2, 2)">每十個驅叉劑，加強驅叉劑</button>
+			<button onclick="buy(2, 3)">每新一集，獲得的鑰匙增加5%</button>
+			<button onclick="reset(2)" style="display:none">新一期New Cake at Stake!</button>
 		</div>
 		<div id="cakes" class="tab" style="display:none">
 			<div><span id="cakeAmount">0</span> Cakes baked</div>
