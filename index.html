@@ -2,10 +2,32 @@
 <html>
 	<head>
 		<script type="text/javascript" src="main.js"></script>
-		<script type="text/javascript" src="hyperion.js"></script>
+		<script type="text/javascript" src="confractus_numerus.js"></script>
 		<title>World Restoration</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body style="text-align:center" onLoad="">
+	<body style="text-align:center" onLoad="start()">
+		<div id="forks" class="tab" style="display:block">
+			<div id="forkAmount"><span id="repelled">0</span> Forks repelled</div>
+			<button onclick="buy(1, 1)">Buy Fork Repellent 1<br/>
+				Cost: <span id="fr1Cost">10</span> Forks repelled
+				</button>
+			<button onclick="reset(1)" style="display:none">New Episode!</button>
+		</div>
+		<div id="keys" class="tab" style="display:none">
+			<div><span id="keysAmount">0</span> Keys obtained</div>
+			<button onclick="buy(2, 1)">More Forks are repelled based on Keys</button>
+			<button onclick="buy(2, 2)">Power up Fork Repellents for every 10 bought</button>
+			<button onclick="buy(2, 3)">Get 5% more Keys each New Episode</button>
+			<button onclick="reset(2)" style="display:none">New Cake at Stake!</button>
+		</div>
+		<div id="cakes" class="tab" style="display:none">
+			<div><span id="cakeAmount">0</span> Cakes baked</div>
+			<button onclick="buy(3, 1)">More Forks are repelled based on Cakes</button>
+			<button onclick="buy(3, 2)">Power up Fork Repellents for every 25 bought</button>
+			<button onclick="buy(3, 3)">Get 5% more Cakes for each New Cake at Stake</button>
+			<button onclick="flakeBrake()" style="display:none">Restart the game completely, but get a <span id="cakeBonus">2</span>x bonus to Cakes!</button>
+			<button onclick="buy(3, 4)">Get 10% more Cakes from Brake at Flake</button>
+			<button onclick="reset(3)" style="display:none">
 	</body>
 </html>
