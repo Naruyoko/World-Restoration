@@ -38,7 +38,7 @@ function getDefaultUser() {
     },
     level6: {//記憶
       amount: new Decimal(0),
-      onversion: [4, new Decimal(1e15)],
+      conversion: [4, new Decimal(1e15)],
       ups: [0, 0, 0],
       costs: [10, new Decimal(1e6), new Decimal(1000)],
       increase: [0, new Decimal(15), new Decimal(1.6)],
